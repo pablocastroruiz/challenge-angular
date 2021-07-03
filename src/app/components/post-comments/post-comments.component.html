@@ -1,0 +1,15 @@
+<div>
+    <div *ngIf="post">
+        <p>The post item is: {{post.title}}</p>
+    </div>
+    
+    <app-new-comment
+        (createComment)="createComment($event)">
+    </app-new-comment>
+
+    <app-comment-item
+        *ngFor="let comment of commentsList"
+        [comment]="comment"
+        (deleteComment)="deleteComment($event)">
+    </app-comment-item>
+</div>

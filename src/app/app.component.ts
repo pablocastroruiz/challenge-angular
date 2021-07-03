@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'challenge-angular';
+  
+  constructor(){
+  }
+
+  public addNumbers (number1: number,number2: number = 2): number {
+		return number1 + number2;
+	}
+
 }

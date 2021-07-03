@@ -1,0 +1,6 @@
+<form [formGroup]="commentForm">
+    <input type="text" formControlName="name" placeholder="Name">
+    <input type="email" formControlName="email" placeholder="Email">
+    <input type="text" formControlName="body" placeholder="Write a comment...">
+    <input type="button" (click)="submitComment()" value="Send" class="btn btn-primary btn-sm">
+</form>

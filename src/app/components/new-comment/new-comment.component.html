@@ -1,6 +1,20 @@
-<form [formGroup]="commentForm">
-    <input type="text" formControlName="name" placeholder="Name">
-    <input type="email" formControlName="email" placeholder="Email">
-    <input type="text" formControlName="body" placeholder="Write a comment...">
-    <input type="button" (click)="submitComment()" value="Send" class="btn btn-primary btn-sm">
+<form [formGroup]="commentForm" class="col-md-8 border p-3">
+    <div class="row p-1 mb-2">
+        <div class="col">
+            <input type="text" formControlName="name" placeholder="Name" class="form-control">
+        </div>
+        <div class="col">
+            <input type="email" formControlName="email" placeholder="Email" class="form-control">
+        </div>
+    </div>
+    <div class="row p-1 mb-2">
+        <div class="col">
+            <input type="text" formControlName="body" placeholder="Write a comment..." class="form-control">
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-3">
+            <input type="button" (click)="submitComment()" value="Send" class="btn btn-primary btn-sm form-control">
+        </div>
+    </div>
 </form>

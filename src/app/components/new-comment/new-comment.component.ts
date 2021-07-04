@@ -26,7 +26,7 @@ export class NewCommentComponent implements OnInit {
 
   submitComment(): void{
     if(this.commentForm.valid){
-      this.createComment.emit(this.newComment);
+      this.createComment.emit(this.commentForm.value);
       this.commentForm.reset();
     }
   }

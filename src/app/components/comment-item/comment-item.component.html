@@ -1,8 +1,16 @@
-<div>
-    <div>{{comment.name}}</div>
-    <div>{{comment.body}}</div>
+<div class="item p-3 mb-4">
+    <div>
+        <b>{{comment.name}}</b>
+    </div>
+    <div>
+        <a href="mailto:{{comment.email}}">
+            {{comment.email}}
+        </a>
+    </div>
+    <div class="mb-3">
+        {{comment.body}}
+    </div>
     <div>
         <button class="btn btn-primary btn-sm" (click)="removeComment()">Delete comment</button>
     </div>
-    <br>
 </div>

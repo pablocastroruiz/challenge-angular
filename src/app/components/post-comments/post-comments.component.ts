@@ -29,7 +29,7 @@ export class PostCommentsComponent implements OnInit {
   
   createComment(comment:Comment){
     this.commentService.createComment(comment).subscribe();
-    this.commentsList.push(comment);
+    this.commentsList.unshift(comment);
   }
 
   deleteComment(comment:Comment){

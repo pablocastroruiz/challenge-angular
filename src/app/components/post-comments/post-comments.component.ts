@@ -4,6 +4,7 @@ import { PostService } from 'src/app/services/post.service';
 import { CommentService } from 'src/app/services/comment.service';
 import { Post } from 'src/app/models/Post';
 import { Comment } from 'src/app/models/Comment';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-post-comments',
@@ -29,6 +30,8 @@ export class PostCommentsComponent implements OnInit {
   
   createComment(comment:Comment){
     this.commentService.createComment(comment).subscribe();
+    //Adding mock id
+    comment.id = uuidv4();
     this.commentsList.unshift(comment);
   }
 

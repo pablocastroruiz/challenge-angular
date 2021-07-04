@@ -2,7 +2,10 @@
     max-width: 20rem;
     height: 21rem;
 }
-
+.card-header{
+    color:#fff;
+    font-size: 1.125rem;
+}
 .btn{
     width: 6rem;
 }

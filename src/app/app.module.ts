@@ -14,6 +14,7 @@ import { PostCommentsComponent } from './components/post-comments/post-comments.
 import { CommentItemComponent } from './components/comment-item/comment-item.component';
 import { NewCommentComponent } from './components/new-comment/new-comment.component';
 import { AboutComponent } from './components/about/about.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AboutComponent } from './components/about/about.component';
     PostCommentsComponent,
     CommentItemComponent,
     NewCommentComponent,
-    AboutComponent
+    AboutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -20,9 +20,13 @@ export class PostCommentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.postId = this.route.snapshot.params['id'];
+    //Get cached data
+    this.post = this.postService.getCachedPost(this.postId);
+    if(!this.post)
     this.postService.getPost(this.postId).subscribe(post => {
       this.post = post;
     });
+
     this.commentService.getComments(this.postId).subscribe(comments => {
       this.commentsList = comments;
     });

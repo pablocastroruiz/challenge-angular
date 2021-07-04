@@ -16,16 +16,23 @@ const httOptions = {
 
 export class PostService {
 
+  postsList:Post[]= [];
+
   postsUrl:string = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http:HttpClient) { }
 
   getPosts():Observable<Post[]>{
-    return this.http.get<Post[]>(`${this.postsUrl}?_limit=10`);
+    //Limit data records, and joining the user owner
+    return this.http.get<Post[]>(`${this.postsUrl}?_limit=30&_expand=user`);
+  }
+
+  getCachedPost(idPost:number):Post{
+    return this.postsList ? this.postsList.filter(item => item.id = idPost)[0] : null;
   }
 
   getPost(idpost:number):Observable<Post>{
-    return this.http.get<Post>(`${this.postsUrl}/${idpost}`);
+    return this.http.get<Post>(`${this.postsUrl}/${idpost}?_expand=user`);
   }
 
   deletePost(idPost:number):Observable<any>{

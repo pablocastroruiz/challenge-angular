@@ -1,5 +1,6 @@
 <div class="container">
     <div *ngIf="post">
+        <h6 class="name">{{post.user.name}}</h6>
         <p class="title">{{post.title}}</p>
         <p>{{post.body}}</p>
     </div>

@@ -1,3 +1,6 @@
 .item{
     background-color: darkgrey;
 }
+.message{
+    word-wrap: break-word;
+}

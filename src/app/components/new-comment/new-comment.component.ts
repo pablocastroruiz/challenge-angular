@@ -18,9 +18,9 @@ export class NewCommentComponent implements OnInit {
 
   ngOnInit(): void {
     this.commentForm = this.formBuilder.group({
-      name: [this.newComment.name, [Validators.required]],
-      email: [this.newComment.email, [Validators.required, Validators.email]],
-      body: [this.newComment.body, [Validators.required]]
+      name: [this.newComment.name, [Validators.required, Validators.maxLength(50)]],
+      email: [this.newComment.email, [Validators.required, Validators.maxLength(50), Validators.email]],
+      body: [this.newComment.body, [Validators.required, Validators.maxLength(200)]]
     });
   }
 

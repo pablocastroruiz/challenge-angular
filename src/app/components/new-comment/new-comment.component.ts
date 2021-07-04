@@ -19,7 +19,7 @@ export class NewCommentComponent implements OnInit {
   ngOnInit(): void {
     this.commentForm = this.formBuilder.group({
       name: [this.newComment.name, [Validators.required]],
-      email: [this.newComment.email, [Validators.required]],
+      email: [this.newComment.email, [Validators.required, Validators.email]],
       body: [this.newComment.body, [Validators.required]]
     });
   }
@@ -28,6 +28,8 @@ export class NewCommentComponent implements OnInit {
     if(this.commentForm.valid){
       this.createComment.emit(this.commentForm.value);
       this.commentForm.reset();
+    }else{
+      this.commentForm.markAllAsTouched();
     }
   }
 }

@@ -1,7 +1,7 @@
-<div class="row">
-    <h2>Posts</h2>
+<div class="row d-flex">
+    <h2 class="posts">Posts</h2>
     <app-post-item
-        class="col-lg-4 col-md-6 col-sm-12" 
+        class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center" 
         *ngFor="let post of postsList"
         [post]="post"
         (deletePost)="deletePost($event)">

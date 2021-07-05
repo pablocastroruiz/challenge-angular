@@ -16,6 +16,7 @@ describe('CommentItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CommentItemComponent);
     component = fixture.componentInstance;
+    fixture.componentInstance.comment = {id: 1, postId: 1, name: "Test name", email: "test@mail.com", body: "Test body"};
     fixture.detectChanges();
   });
 

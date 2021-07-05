@@ -23,15 +23,16 @@ export class PostService {
   constructor(private http:HttpClient) { }
 
   getPosts():Observable<Post[]>{
-    //Limit data records, and joining the user owner
+    //Limit data records, and join the user owner
     return this.http.get<Post[]>(`${this.postsUrl}?_limit=30&_expand=user`);
   }
 
   getCachedPost(idPost:number):Post{
-    return this.postsList ? this.postsList.filter(item => item.id = idPost)[0] : null;
+    return this.postsList.length ? this.postsList.filter(item => item.id = idPost)[0] : null;
   }
 
   getPost(idpost:number):Observable<Post>{
+    //Join the user owner
     return this.http.get<Post>(`${this.postsUrl}/${idpost}?_expand=user`);
   }
 

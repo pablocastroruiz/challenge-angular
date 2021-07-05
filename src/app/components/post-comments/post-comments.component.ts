@@ -15,7 +15,7 @@ export class PostCommentsComponent implements OnInit {
 
   post:Post;
   postId:number;
-  commentsList:Comment[];
+  commentsList:Comment[] = [];
   constructor(private route: ActivatedRoute, private postService: PostService, private commentService: CommentService) { }
 
   ngOnInit(): void {

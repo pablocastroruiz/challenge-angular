@@ -1,4 +1,4 @@
-import { getTestBed, inject, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { PostService } from './post.service';
 import { Post } from '../models/Post';
@@ -13,8 +13,8 @@ describe('PostService', () => {
       imports: [HttpClientTestingModule],
       providers: [PostService]
     });
-    service = TestBed.get(PostService);
-    httpClientMock = TestBed.get(HttpTestingController);
+    service = TestBed.inject(PostService);
+    httpClientMock = TestBed.inject(HttpTestingController);
   });
 
   afterEach(() => {

@@ -32,14 +32,14 @@ export class PostCommentsComponent implements OnInit {
     });
   }
   
-  createComment(comment:Comment){
+  createComment(comment:Comment): void{
     this.commentService.createComment(comment).subscribe();
     //Adding mock id
     comment.id = uuidv4();
     this.commentsList.unshift(comment);
   }
 
-  deleteComment(comment:Comment){
+  deleteComment(comment:Comment): void{
     this.commentService.deleteComment(comment.id).subscribe();
     this.commentsList = this.commentsList.filter(item => item.id != comment.id);
   }

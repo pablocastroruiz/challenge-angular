@@ -6,9 +6,12 @@
     </div>
     <br>
     <h5 class="mb-3">Add new post</h5>
-    <app-new-comment
-        (createComment)="createComment($event)">
+    <div *ngIf="post">
+        <app-new-comment
+            [postId]="post.id"
+            (createComment)="createComment($event)">
     </app-new-comment>
+    </div>
     <br>
     <h5 class="mb-3">Comments</h5>
     <app-comment-item

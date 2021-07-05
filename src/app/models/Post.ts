@@ -1,7 +1,7 @@
-export class Post{
-    id:number;
-    userId:number;
-    title:string;
-    body:string;
-    user:any
+export class Post {
+    id: number;
+    userId: number;
+    title: string;
+    body: string;
+    user: any
 }

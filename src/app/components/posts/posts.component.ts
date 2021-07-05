@@ -20,7 +20,7 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  deletePost(post:Post){
+  deletePost(post:Post): void{
     this.postService.deletePost(post.id).subscribe();
     this.postsList = this.postsList.filter(item => item.id != post.id);
   }

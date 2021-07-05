@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Comment } from 'src/app/models/Comment';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class NewCommentComponent implements OnInit {
 
+  @Input() postId: number;
   @Output() createComment: EventEmitter<Comment> = new EventEmitter();
 
   newComment:Comment = new Comment();

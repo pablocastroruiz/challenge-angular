@@ -8,11 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
-import { PostsComponent } from './components/posts/posts.component';
-import { PostItemComponent } from './components/post-item/post-item.component';
-import { PostCommentsComponent } from './components/post-comments/post-comments.component';
-import { CommentItemComponent } from './components/comment-item/comment-item.component';
-import { NewCommentComponent } from './components/new-comment/new-comment.component';
+import { PostsComponent } from './components/pages/posts/posts/posts.component';
+import { PostItemComponent } from './components/pages/posts/post-item/post-item.component';
+import { PostCommentsComponent } from './components/pages/comments/post-comments/post-comments.component';
+import { CommentItemComponent } from './components/pages/comments/comment-item/comment-item.component';
+import { NewCommentComponent } from './components/pages/comments/new-comment/new-comment.component';
 import { AboutComponent } from './components/about/about.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 

@@ -15,6 +15,7 @@ import { CommentItemComponent } from './components/pages/comments/comment-item/c
 import { NewCommentComponent } from './components/pages/comments/new-comment/new-comment.component';
 import { AboutComponent } from './components/about/about.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PaginationComponent } from './components/shared/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     CommentItemComponent,
     NewCommentComponent,
     AboutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

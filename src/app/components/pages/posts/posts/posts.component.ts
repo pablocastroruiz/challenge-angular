@@ -9,19 +9,26 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class PostsComponent implements OnInit {
 
-  postsList:Post[];
+  postsList: Post[] = [];
+  totalPosts: number = 0;
+  elemsPerPage: number = 6;
 
   constructor(private postService:PostService) {  }
 
   ngOnInit(): void {
-    this.postService.getPosts().subscribe(posts => {
-      this.postsList = posts;
-      this.postService.postsList = this.postsList;
-    });
+    this.getPosts(1);
   }
 
   deletePost(post:Post): void{
     this.postService.deletePost(post.id).subscribe();
     this.postsList = this.postsList.filter(item => item.id != post.id);
+  }
+
+  getPosts(page: number): void {
+    this.postService.getPosts(page, this.elemsPerPage).subscribe(response => {
+      this.postsList = response.body;
+      this.totalPosts = response.headers.get('X-total-count');
+      this.postService.postsList = this.postsList;
+    });
   }
 }
